@@ -26,15 +26,8 @@ distance = cv2.distanceTransform(
     foreground, cv2.DIST_L2, 5
 )
 
-# Select interior regions to separate narrow contacts between balls.
-_, mask = cv2.threshold(
-    distance,
-    0.5 * distance.max(),
-    255,
-    cv2.THRESH_BINARY
-)
-
-mask = mask.astype("uint8")
+# Count the complete foreground regions for separated objects.
+mask = foreground.copy()
 
 # Find the outer boundary of each white region
 contours, _ = cv2.findContours(
