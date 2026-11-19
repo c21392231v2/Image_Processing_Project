@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Count separated LEGO",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/object_counter_prototype.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "multiple_lego_pieces.png"
+            ]
+        },
+        {
+            "name": "Count three red bricks",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/object_counter_prototype.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "3_red_lego_pieces.png",
+                "--foreground", "red",
+                "--method", "watershed",
+                "--seed-fraction", "0.70"
+            ]
+        },
+        {
+            "name": "Count two red bricks",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/object_counter_prototype.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "2_red_lego_pieces.png",
+                "--foreground", "red",
+                "--method", "watershed",
+                "--seed-fraction", "0.75"
+            ]
+        }
+    ]
+}
