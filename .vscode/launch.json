@@ -8,9 +8,7 @@
             "program": "${workspaceFolder}/object_counter_prototype.py",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
-            "args": [
-                "multiple_lego_pieces.png"
-            ]
+            "args": ["multiple_lego_pieces.png"]
         },
         {
             "name": "Count three red bricks",
@@ -39,6 +37,22 @@
                 "--method", "watershed",
                 "--seed-fraction", "0.75"
             ]
+        },
+        {
+            "name": "Count LEGO from image path",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/object_counter_prototype.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": ["${input:legoImagePath}", "--foreground", "auto"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "legoImagePath",
+            "type": "promptString",
+            "description": "Enter the image path relative to the project folder, or paste its full path"
         }
     ]
 }
